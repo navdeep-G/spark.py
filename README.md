@@ -20,7 +20,7 @@ Just give the `spark_print` function a list of numbers.
 Or call `spark.py` from the command line.
 
     python spark.py 0 30 55 80 33 150
-    ▁▂▂▃▂▇
+    ▁▂▃▅▃▇
 
 ## ▇▁ ⟦⟧ ▇▁
 
