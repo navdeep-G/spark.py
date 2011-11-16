@@ -9,13 +9,13 @@ A port of @holman's spark project for Python.
 
 import sys
 
-ticks = (u'▁', u'▂', u'▃', u'▅', u'▆', u'▇')
+ticks = u'▁▂▃▅▆▇'
 
 
 def spark_string(ints):
     """Returns a spark string from given iterable of ints."""
-    step = ((max(ints)) / (len(ticks) - 1))
-    return u' '.join([ticks[(i / step)] for i in ints])
+    step = ((max(ints)) / float(len(ticks) - 1)) or 1
+    return u' '.join(ticks[int(round(i / step))] for i in ints)
 
 
 def spark_print(ints, stream=None):
@@ -26,7 +26,7 @@ def spark_print(ints, stream=None):
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
-        sparks = map(lambda a: int(a), sys.argv[1:])
+        sparks = map(int, sys.argv[1:])
         spark_print(sparks)
         print
     else:
