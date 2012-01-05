@@ -22,7 +22,7 @@ def spark_print(ints, stream=None):
     """Prints spark to given stream."""
     if stream is None:
         stream = sys.stdout
-    stream.write(spark_string(ints).encode('utf-8')
+    stream.write(spark_string(ints).encode('utf-8'))
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
