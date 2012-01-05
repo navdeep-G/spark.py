@@ -15,14 +15,14 @@ ticks = u'▁▂▃▅▆▇'
 def spark_string(ints):
     """Returns a spark string from given iterable of ints."""
     step = ((max(ints)) / float(len(ticks) - 1)) or 1
-    return u' '.join(ticks[int(round(i / step))] for i in ints)
+    return u''.join(ticks[int(round(i / step))] for i in ints)
 
 
 def spark_print(ints, stream=None):
     """Prints spark to given stream."""
     if stream is None:
         stream = sys.stdout
-    stream.write(spark_string(ints))
+    stream.write(spark_string(ints).encode('utf-8')
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
